@@ -4,7 +4,7 @@ const { SHELL, OS, npm_lifecycle_script } = process.env
 
 //console.table({ SHELL, OS ,npm_lifecycle_script})
 
-const characters = ['flash', 'superman', 'green lantern', 'batman']
+export const characters = ['Flash', 'Superman', 'Green Lantern', 'Batman']
 
 const [, , , batman] = characters
 
