@@ -1,26 +1,31 @@
-export interface CreatetableUseCase {
-
-    execute: (options: CreatetableOptions) => string
+export interface CreateTableUseCase {
+  execute: ( options: CreateTableOptions ) => string;
 }
 
-export interface CreatetableOptions {
-    base: number,
-    limit: number,
+export interface CreateTableOptions {
+  base: number;
+  limit?: number;
 }
 
-export class Createtable implements CreatetableUseCase {
-    constructor(
-        /**
-         * DI - Dependency Injection
-         */
-    ) { }
 
-    execute({ base, limit }: CreatetableOptions) {
-        let outputMessage = ""
-        for (let index = 1; index <= limit; index++) {
-            var result = base * index
-            outputMessage = outputMessage.concat("\n" + `${base} x ${index} = ${result}`)
-        }
-        return outputMessage
+export class CreateTable implements CreateTableUseCase {
+
+  constructor(
+    /**
+     * DI - Dependency Injection
+     */
+  ){}
+
+  execute({ base, limit = 10 }: CreateTableOptions ){
+    
+    let outputMessage = '';
+    for( let i = 1; i <= limit; i++ ) {
+      outputMessage += `${ base } x ${ i } = ${ base * i }`;
+
+      if ( i < limit ) outputMessage += '\n';
     }
+
+    return outputMessage;
+  }
+  
 }
