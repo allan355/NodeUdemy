@@ -193,3 +193,8 @@ $RECYCLE.BIN/
 
 #ignore output folder
 **/outputs/*
+
+#ignore mongo folder
+**/mongo/*
+
+**/postgres/*
